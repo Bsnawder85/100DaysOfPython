@@ -19,11 +19,13 @@ screen.bgcolor("black")
 screen.tracer(0)
 dividing_line = GameDivider(800, 600)
 
-player1 = Paddle()
+right_paddle = Paddle((350, 0))
+left_paddle = Paddle((-350, 0))
 
 screen.update()  # show screen and game objects after placing them.
 
 screen.listen()
-
+# screen.onkeypress(right_paddle.go_up, UP)
+# screen.onkeypress(right_paddle.go_down, DOWN)
 
 screen.exitonclick()
