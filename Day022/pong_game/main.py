@@ -1,9 +1,13 @@
 from turtle import Screen
 from game_divider import GameDivider
 from paddle import Paddle
+from ball import Ball
+import time
 
-UP = "up"
-DOWN = "down"
+UP = "Up"
+DOWN = "Down"
+W = "w"
+S = "s"
 
 # Build a version of the famous arcade game Pong.
 # You need a game area to play on (screen) with a dashed line down the middle
@@ -21,11 +25,18 @@ dividing_line = GameDivider(800, 600)
 
 right_paddle = Paddle((350, 0))
 left_paddle = Paddle((-350, 0))
-
-screen.update()  # show screen and game objects after placing them.
+ball = Ball()
 
 screen.listen()
-# screen.onkeypress(right_paddle.go_up, UP)
-# screen.onkeypress(right_paddle.go_down, DOWN)
+screen.onkey(right_paddle.go_up, UP)
+screen.onkey(right_paddle.go_down, DOWN)
+screen.onkey(left_paddle.go_up, W)
+screen.onkey(left_paddle.go_down, S)
+
+game_is_on = True
+while game_is_on:
+    time.sleep(0.1)
+    ball.move()
+    screen.update()
 
 screen.exitonclick()
