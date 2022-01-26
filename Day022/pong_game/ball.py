@@ -4,6 +4,8 @@ from turtle import Turtle
 class Ball(Turtle):
     def __init__(self):
         super(Ball, self).__init__()
+        self.y_limit = (-290, 290)
+        self.x_limit = (-390, 390)
         self.shape("circle")
         self.color("white")
         self.penup()

@@ -35,6 +35,14 @@ class Snake:
     def extend(self):
         self.add_segment(self.body[-1].position())
 
+    def reset(self):
+        # move the snake off the screen 
+        for segment in self.body:
+            segment.goto(1000, 1000)
+        self.body.clear()
+        self.create_snake()
+        self.head = self.body[0]
+
     def up(self):
         if self.head.heading() != DOWN:
             self.head.setheading(UP)

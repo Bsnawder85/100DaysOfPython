@@ -35,7 +35,7 @@ screen.onkey(left_paddle.go_down, S)
 
 game_is_on = True
 while game_is_on:
-    time.sleep(0.1)
+    time.sleep(0.1)  # the ball moves way too fast. let's slow it down, make the game playable.
     ball.move()
     screen.update()
 
