@@ -12,7 +12,9 @@ with open("./Input/Names/invited_names.txt") as file:
 
 with open("./Input/Letters/starting_letter.txt") as read_letter:
     letter = read_letter.read()
-    for name in names:
-        with open(f"./Output/ReadyToSend/{name.strip()}.txt", mode="w") as write_file:
-            letter.replace("[name]", name.strip())
-            write_file.write(letter)
+
+for name in names:
+    stripped_name = name.strip()
+    with open(f"./Output/ReadyToSend/{name}.txt", mode="w") as write_file:
+        new_letter = letter.replace("[name]", stripped_name)
+        write_file.write(new_letter)
