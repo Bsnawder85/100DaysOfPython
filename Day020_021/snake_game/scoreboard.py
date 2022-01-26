@@ -11,7 +11,8 @@ class Scoreboard(Turtle):
         self.goto(0, 270)
         self.color("white")
         self.score = 0
-        self.high_score = 0
+        with open("data.txt") as file:
+            self.high_score = file.read()
         self.update_score()
 
     def update_score(self):
