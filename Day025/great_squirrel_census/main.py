@@ -6,12 +6,12 @@
 import pandas
 
 data = pandas.read_csv("2018_Central_Park_Squirrel_Census_-_Squirrel_Data.csv")
-cinnamon_squirrels = data[data['Primary Fur Color'] == "Cinnamon"]['Unique Squirrel ID'].count()
-grey_squirrels = data[data['Primary Fur Color'] == 'Gray']['Unique Squirrel ID'].count()
-black_squirrels = data[data['Primary Fur Color'] == 'Black']['Unique Squirrel ID'].count()
+cinnamon_squirrels = len(data[data['Primary Fur Color'] == "Cinnamon"])
+grey_squirrels = len(data[data['Primary Fur Color'] == 'Gray'])
+black_squirrels = len(data[data['Primary Fur Color'] == 'Black'])
 
 squirrel_data = {
-    "Fur Color": ["gray", "cinnamon", "black"],
+    "Fur Color": ["Gray", "Cinnamon", "Black"],
     "Count": [grey_squirrels, cinnamon_squirrels, black_squirrels]
 }
 squirrel_counts = pandas.DataFrame(squirrel_data)
