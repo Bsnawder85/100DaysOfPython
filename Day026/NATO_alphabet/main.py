@@ -9,7 +9,7 @@ nato_alpha_df = pandas.read_csv("nato_phonetic_alphabet.csv")
 
 user_word = input("Enter a word: ").upper()
 
-phonetics = {
-    letter: row.code for letter in user_word for (index, row) in nato_alpha_df.iterrows() if letter == row.letter
-}
+phonetics = [
+    row.code for letter in user_word for (index, row) in nato_alpha_df.iterrows() if letter == row.letter
+]
 print(phonetics)
