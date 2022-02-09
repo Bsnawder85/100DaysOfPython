@@ -38,8 +38,8 @@ while len(states_guessed) <= 50:
             state_writer.write(arg=ms.title(), align='center',
                                font=('Arial', 13, 'normal'))
         # turn missing states into a csv file
-        new_data = pandas.DateFrame(missing_states)
-        new_data.to_csv("states_to_learn")
+        new_data = pandas.DataFrame(missing_states)
+        new_data.to_csv("states_to_learn.csv.csv")
         break
     elif answer_state in all_states:
         # write the correct guesses onto the map
