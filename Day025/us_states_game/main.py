@@ -26,17 +26,13 @@ while len(states_guessed) <= 50:
     if answer_state == "Exit":
         # before exiting the game, collect all the states not correctly guessed,
         # and then display them on the screen in red text
-        missing_states = []
-        for state in all_states:
-            if state not in states_guessed:
-                missing_states.append(state)
-        print(missing_states)
+        missing_states = [state for state in all_states if state not in states_guessed]
         for ms in missing_states:
             missing_state = states_data[states_data.state == ms]
             state_writer.pencolor('red')
             state_writer.goto(x=int(missing_state.x), y=int(missing_state.y))
             state_writer.write(arg=ms.title(), align='center',
-                               font=('Arial', 13, 'normal'))
+                               font=('Arial', 12, 'normal'))
         # turn missing states into a csv file
         new_data = pandas.DataFrame(missing_states)
         new_data.to_csv("states_to_learn.csv.csv")
