@@ -4,9 +4,11 @@ from tkinter import *
 # ---------------------------- SAVE PASSWORD ------------------------------- #
 
 # ---------------------------- UI SETUP ------------------------------- #
+# Window
 window = Tk()
 window.title("Password Manager")
 window.config(padx=40, pady=30)
+# Canvas
 canvas = Canvas(width=200, height=200)
 logo = PhotoImage(file="logo.png")
 canvas.create_image(100, 100, image=logo)
