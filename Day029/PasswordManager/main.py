@@ -10,12 +10,15 @@ window.config(padx=40, pady=30)
 canvas = Canvas(width=200, height=200)
 logo = PhotoImage(file="logo.png")
 canvas.create_image(100, 100, image=logo)
+# Labels
 website_label = Label(text="Website:")
 email_username_label = Label(text="Email/Username:")
 password_label = Label(text="Password:")
+# Entries
 website_entry = Entry(width=35)
 email_username_entry = Entry(width=35)
 password_entry = Entry(width=21)
+# Buttons
 generate_password_button = Button(text="Generate Password")
 add_password_button = Button(text="Add", width=36)
 
