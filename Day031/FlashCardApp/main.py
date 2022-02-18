@@ -1,7 +1,14 @@
 from tkinter import *
+import pandas
+import random
 
 BACKGROUND_COLOR = "#B1DDC6"
+# ==================== DATA ====================
+vocabulary_csv = pandas.read_csv("data/french_words.csv")
+vocab_data = pandas.DataFrame(data=vocabulary_csv, columns=["French", "English"]).to_dict(orient="records")
+# ==================== LOGIC ====================
 
+# ==================== GUI ====================
 # WINDOW
 window = Tk()
 window.title("Flashy")
