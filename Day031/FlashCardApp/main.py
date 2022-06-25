@@ -7,6 +7,9 @@ BACKGROUND_COLOR = "#B1DDC6"
 vocabulary_csv = pandas.read_csv("data/french_words.csv")
 vocab_data = pandas.DataFrame(data=vocabulary_csv, columns=["French", "English"]).to_dict(orient="records")
 # ==================== LOGIC ====================
+# TODO:
+#  Pick a random French word/translation and put the word into the flashcard.
+#  Every time you press the right or wrong buttons, it should generate a new random word to display.
 
 # ==================== GUI ====================
 # WINDOW
